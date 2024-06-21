@@ -5,7 +5,7 @@ const Root = () => {
     return (
 
         <div className=" bg-[#C5D1EB]">
-           <div className="bg-[#92AFD7]"> <Navbar className=""></Navbar></div>
+           <div className="bg-[#92AFD7] sticky top-0 z-10"> <Navbar className=""></Navbar></div>
             <div className="mx-auto max-w-6xl h-screen">
                 <Outlet></Outlet>
             </div>
