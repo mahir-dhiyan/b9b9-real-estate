@@ -1,6 +1,7 @@
-import { Result } from "postcss";
+
 import Header from "./Header/Header";
 import { useEffect, useState } from "react";
+import Estates from "./Estates/Estates";
 
 const Home = () => {
     const [estates, setEstates] = useState([]);
@@ -11,14 +12,14 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <Header></Header>
+            <Header ></Header>
+            <div className="md:grid md:grid-cols-3 md:gap-5 space-y-4 md:space-y-0 mt-4 ">
             {
                 estates.map(estate => (
-               <div className=""> 
-               <p>{estate.id}</p>
-               <img src={estate.image} alt="" /></div>
+               <Estates key={estate.id} estate={estate}></Estates>
                 ))
             }
+            </div>
         </div>
     );
 };

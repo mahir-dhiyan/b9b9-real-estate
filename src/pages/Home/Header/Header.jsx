@@ -24,7 +24,7 @@ const Header = () => {
 
   </swiper-container> */}
 
-<Swiper navigation={true}  modules={[Navigation]} className="mySwiper h-[550px] rounded-3xl">
+<Swiper navigation={true}  modules={[Navigation]} className="mySwiper md:h-[550px] rounded-3xl">
         <SwiperSlide ><img className='  ' src="https://i.ibb.co/WWBjWDL/Gemini-Generated-Image-27zet627zet627ze.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img src="https://i.ibb.co/NnHYVrm/4.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img src="https://i.ibb.co/HzNRjBJ/7.jpg" alt="" /></SwiperSlide>
