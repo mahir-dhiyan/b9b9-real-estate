@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import './Navbar.css'
+import 'animate.css';
 const Navbar = () => {
     const navLinks = <>
 
@@ -24,7 +25,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-[#5C2751] font-bold text-3xl">Real State</a>
+                <a className="btn btn-ghost text-[#5C2751] font-bold text-3xl animate__animated animate__zoomIn ">Real State</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 navigation">
@@ -32,7 +33,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn text-white bg-[#5C2751] border-none">Log in</a>
+                <a className="btn text-white bg-[#5C2751] border-none animate__animated animate__zoomIn ">Log in</a>
             </div>
         </div>
     );
