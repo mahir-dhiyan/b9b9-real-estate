@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
 import 'animate.css';
 const Navbar = () => {
@@ -33,7 +33,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn text-white bg-[#5C2751] border-none animate__animated animate__zoomIn ">Log in</a>
+               <Link to='/login'>
+               <a className="btn text-white bg-[#5C2751] border-none animate__animated animate__zoomIn ">Log in</a></Link>
             </div>
         </div>
     );

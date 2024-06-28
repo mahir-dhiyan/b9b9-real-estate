@@ -5,6 +5,8 @@ import Root from "../../layout/Root";
 import Home from "../Home/Home";
 import Register from "../Register/Register";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import Login from "../Login/Login";
+import EstateDetails from "../EstateDetails/EstateDetails";
 
     const router = createBrowserRouter([
         {
@@ -19,6 +21,15 @@ import ErrorPage from "../ErrorPage/ErrorPage";
             {
               path: "/register",
               element: <Register></Register>,
+            },
+            {
+              path: "/login",
+              element: <Login></Login>,
+            },
+            {
+              path: "/estateDetails/:fId",
+              element: <EstateDetails></EstateDetails>,
+              loader: ()=> fetch('estates.json'),
             },
           ],
         },
