@@ -1,7 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
 import 'animate.css';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/Authproviders";
 const Navbar = () => {
+    const {logOut,user}=useContext(AuthContext);
+    const handleLogout = ()=>{
+        logOut()
+        .then()
+        .catch()
+    }
     const navLinks = <>
 
         <div className="md:flex md:flex-row md:space-y-0 md:gap-4 flex-col space-y-2  ">
@@ -10,7 +18,7 @@ const Navbar = () => {
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/about">About</NavLink></li>
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/register">Register</NavLink></li>
         </div>
-
+        
 
 
     </>
@@ -33,8 +41,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-               <Link to='/login'>
+                {user?   
+                 <Link onClick={handleLogout}>
+               <a className="btn text-white bg-[#5C2751] border-none animate__animated animate__zoomIn ">Log Out</a></Link>
+                :   
+                
+                <Link to='/login'>
                <a className="btn text-white bg-[#5C2751] border-none animate__animated animate__zoomIn ">Log in</a></Link>
+                
+                }
+               
             </div>
         </div>
     );
