@@ -4,6 +4,7 @@ import { AuthContext } from "../../providers/Authproviders";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
     const [showPass,setShowPass]=useState(false);
     const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -75,10 +76,10 @@ const Register = () => {
             });
     };
     return (
-
-
-
-        <div className="">
+          <div className="">
+             <Helmet>
+                <title>Register - Real State</title>
+            </Helmet>
             <h3 className="text-3xl font-bold text-center mt-6">Please Register</h3>
             <form onSubmit={handleRegister} className="card-body md:w-3/4 lg:1/2 mx-auto">
                 <div className="form-control">

@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaRegEye } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
     const auth = getAuth();
@@ -71,8 +72,12 @@ const signInWithGoogle =()=>{
 
     }
     return (
+        
 
         <div className="h-screen md:grid md:grid-cols-5">
+             <Helmet>
+                <title>Login - Real State</title>
+            </Helmet>
             <div className="col-span-4 ">
                 <h3 className="text-3xl font-bold text-center mt-6">Login with Email</h3>
                 <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:1/2 mx-auto">

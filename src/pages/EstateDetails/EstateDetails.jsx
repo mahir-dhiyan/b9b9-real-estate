@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaHandPointRight } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
     const { fId } = useParams();
@@ -14,6 +15,9 @@ const EstateDetails = () => {
     }
     return (
         <div className="card lg:card-side bg-[#F0F4EF] shadow-xl mt-4 ">
+            <Helmet>
+                <title>Estate Details - Real State</title>
+            </Helmet>
             <div className="">
                 <img className="h-96  rounded-2xl"
                     src={image}
