@@ -5,8 +5,11 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaRegEye } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
     const notifyError = () => {
         toast.error('Incorrect Email or Password. Check Again!', {
             position: "top-right",
@@ -20,8 +23,31 @@ const Login = () => {
 
         });
     };
+// --------------------------Sign in with google--------------------------------
+const signInWithGoogle =()=>{
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+    //   const credential = GoogleAuthProvider.credentialFromResult(result);
+    //   const token = credential.accessToken;
+      // The signed-in user info.
+    //   const user = result.user;
+    // console.log(result.user);
+    setUser(result.user);
+    navigate(location?.state ? location.state : '/');
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    }).catch((error) => {
+    console.error(error);
+    });
+}
 
-    const { signIn } = useContext(AuthContext);
+
+
+
+
+// ----------------------------Sign in with email-------------------------------------
+    const { signIn,setUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const handleLogin = (e) => {
@@ -92,7 +118,7 @@ const Login = () => {
             </div>
             <div className="space-y-4 p-4 md:p-0">
                 <h3 className="text-3xl font-bold text-center mt-6 md:mt-28">Alternative Login</h3>
-                <button className="btn btn-outline w-full font-bold border-2 text-[#5C2751] h-20 text-lg "> <FaGoogle /> Sign in with Google</button>
+                <button onClick={signInWithGoogle} className="btn btn-outline w-full font-bold border-2 text-[#5C2751] h-20 text-lg "> <FaGoogle /> Sign in with Google</button>
                 <button className="btn btn-outline w-full font-bold border-2 text-[#5C2751] h-20 text-lg "> <FaGithub className="text-xl" /> Sign in with Github</button>
             </div>
         </div>

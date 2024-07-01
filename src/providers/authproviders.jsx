@@ -53,6 +53,7 @@ const logOut = () => {
         updateUserProfile,
         signIn,
         logOut,
+        setUser,
     }
     return (
 
