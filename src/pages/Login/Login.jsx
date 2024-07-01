@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/Authproviders";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { FaRegEye } from "react-icons/fa";
 const Login = () => {
+    const [showPass,setShowPass]=useState(false);
     const notifyError = () => {
         toast.error('Incorrect Email or Password. Check Again!', {
             position: "top-right",
@@ -56,7 +58,12 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                    <div className=" relative flex items-center"><input 
+                    type={showPass? 'text' :'password'  }
+                    name="password" 
+                    placeholder="Password" 
+                    className="input  w-full input-bordered pr-10" 
+                    required /><FaRegEye onClick={()=>setShowPass(!showPass)} className="text-2xl  absolute right-3 cursor-pointer" /></div>
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>

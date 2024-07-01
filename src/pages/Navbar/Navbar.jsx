@@ -55,7 +55,7 @@ const Navbar = () => {
                             <div className="w-10 md:w-14 rounded-full group">
                                 <img src={user.photoURL} />
                                 <div className="absolute top-20 md:top-24 inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <div className="text-[#5C2751] font-bold text-xl">{user.displayName}</div>
+                                    <div className="text-white font-bold text-xl">{user.displayName}</div>
                                 </div>
                             </div>
                         </div>

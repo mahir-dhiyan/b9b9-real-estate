@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/Authproviders";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import { FaRegEye } from "react-icons/fa";
 const Register = () => {
+    const [showPass,setShowPass]=useState(false);
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const notifyLogin = () => {
         toast.success('Successfully Registered', {
@@ -102,14 +103,19 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                    <div className=" relative flex items-center"><input 
+                    type={showPass? 'text' :'password'  }
+                    name="password" 
+                    placeholder="Password" 
+                    className="input  w-full input-bordered pr-10" 
+                    required /><FaRegEye onClick={()=>setShowPass(!showPass)} className="text-2xl  absolute right-3 cursor-pointer" /></div>
 
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn text-white text-xl border-none bg-[#5C2751]">Create Account</button>
                 </div>
             </form>
-            <p className="text-center font-semibold text-lg mt-4">Already have an account? <Link to="/login" className="font-bold text-[#5C2751] text-2xl  hover:text-white">Login</Link></p>
+            <p className="text-center font-semibold text-lg mt-4">Already have an account? Or, want to login with <span className="text-xl font-bold">Google</span> or <span className="text-xl font-bold">Github</span> account? <Link to="/login" className="font-bold text-[#5C2751] text-2xl  hover:text-white">Login</Link></p>
 
 
 
