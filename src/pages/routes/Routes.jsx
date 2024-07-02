@@ -8,6 +8,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Login from "../Login/Login";
 import EstateDetails from "../EstateDetails/EstateDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdateProfile from "../UpdateProfile/UpdateProfile";
 
     const router = createBrowserRouter([
         {
@@ -31,6 +32,11 @@ import PrivateRoutes from "./PrivateRoutes";
               path: "/estateDetails/:fId",
               element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>,
               loader: ()=> fetch('estates.json'),
+            },
+            {
+              path: "/updateProfile",
+              element: <PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>,
+             
             },
           ],
         },

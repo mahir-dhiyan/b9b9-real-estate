@@ -17,6 +17,7 @@ const Navbar = () => {
             <li ><NavLink className='btn bg-transparent font-semibold text-base  border-none' to="/">Home</NavLink></li>
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/about">About</NavLink></li>
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/register">Register</NavLink></li>
+            <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/updateProfile">Update Profile</NavLink></li>
         </div>
 
 
