@@ -10,6 +10,7 @@ import EstateDetails from "../EstateDetails/EstateDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import Profile from "../Profilie/Profile";
+import About from "../About/About";
 
     const router = createBrowserRouter([
         {
@@ -24,6 +25,10 @@ import Profile from "../Profilie/Profile";
             {
               path: "/register",
               element: <Register></Register>,
+            },
+            {
+              path: "/about",
+              element: <About></About>,
             },
             {
               path: "/login",
