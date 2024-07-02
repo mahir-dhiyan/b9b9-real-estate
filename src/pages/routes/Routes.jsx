@@ -11,6 +11,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import Profile from "../Profilie/Profile";
 import About from "../About/About";
+import BookAppoinment from "../BookAppoinment/BookAppoinment";
 
     const router = createBrowserRouter([
         {
@@ -47,6 +48,11 @@ import About from "../About/About";
             {
               path: "/profile",
               element: <PrivateRoutes><Profile></Profile></PrivateRoutes>,
+             
+            },
+            {
+              path: "/bookappoinment",
+              element: <PrivateRoutes><BookAppoinment></BookAppoinment></PrivateRoutes>,
              
             },
           ],
