@@ -17,7 +17,9 @@ const Navbar = () => {
             <li ><NavLink className='btn bg-transparent font-semibold text-base  border-none' to="/">Home</NavLink></li>
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/about">About</NavLink></li>
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/register">Register</NavLink></li>
+            <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/profile">Profile</NavLink></li>
             <li><NavLink className='btn  bg-transparent font-semibold text-base border-none' to="/updateProfile">Update Profile</NavLink></li>
+           
         </div>
 
 
@@ -54,7 +56,7 @@ const Navbar = () => {
 
                         <div className="avatar online mr-2">
                             <div className="w-10 md:w-14 rounded-full group">
-                                <img src={user.photoURL} />
+                                <img src={user.photoURL} alt="User Photo" />
                                 <div className="absolute top-20 md:top-24 inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                     <div className="text-black font-bold text-xl">{user.displayName}</div>
                                 </div>
