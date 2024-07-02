@@ -7,10 +7,14 @@ import { FaGithub, FaRegEye } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
+import {  GithubAuthProvider } from "firebase/auth";
+
+
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
+    const gitprovider = new GithubAuthProvider();
     const notifyError = () => {
         toast.error('Incorrect Email or Password. Check Again!', {
             position: "top-right",
@@ -42,7 +46,19 @@ const signInWithGoogle =()=>{
     console.error(error);
     });
 }
-
+// -------------------------Sign in with Github-------------------------------
+const signInWithGithub =()=>{
+    signInWithPopup(auth, gitprovider)
+    .then((result) => {
+     
+        setUser(result.user);
+        navigate(location?.state ? location.state : '/');
+    }).catch((error) => {
+    
+      console.error(error);
+    });
+  
+}
 
 
 
@@ -124,7 +140,7 @@ const signInWithGoogle =()=>{
             <div className="space-y-4 p-4 md:p-0">
                 <h3 className="text-3xl font-bold text-center mt-6 md:mt-28">Alternative Login</h3>
                 <button onClick={signInWithGoogle} className="btn btn-outline w-full font-bold border-2 text-[#5C2751] h-20 text-lg "> <FaGoogle /> Sign in with Google</button>
-                <button className="btn btn-outline w-full font-bold border-2 text-[#5C2751] h-20 text-lg "> <FaGithub className="text-xl" /> Sign in with Github</button>
+                <button onClick={signInWithGithub} className="btn btn-outline w-full font-bold border-2 text-[#5C2751] h-20 text-lg "> <FaGithub className="text-xl" /> Sign in with Github</button>
             </div>
         </div>
     );
