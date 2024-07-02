@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Map from "../Map/Map";
 
 const BookAppointment = () => {
     return (
@@ -21,6 +22,12 @@ const BookAppointment = () => {
                     <p className="text-lg">Email: <a href="mailto:contact@realstate.com" className="text-blue-500">contact@realstate.com</a></p>
                     <p className="text-lg">Phone: <a href="tel:123-456-7890" className="text-blue-500">123-456-7890</a></p>
                 </div>
+                <div className="mt-4">
+                <h3 className="text-4xl font-bold text-center mt-6">Find Us on Map</h3>
+                </div>
+                <div className="mt-6">
+                    <Map></Map>
+                </div>
                 <h3 className="text-4xl font-bold text-center mt-10">Our Services</h3>
                 <p className="text-xl mt-4">
                     At Real State, we offer a comprehensive range of services tailored to meet the diverse needs of our clients:
@@ -28,7 +35,7 @@ const BookAppointment = () => {
                 <ul className="list-disc list-inside mt-4 text-lg">
                     <li><strong>Buying:</strong> Explore our extensive listings of single-family homes, townhouses, and apartments. Our agents will help you find the perfect home and navigate the buying process with ease.</li>
                     <li><strong>Selling:</strong> Maximize the value of your property with our expert marketing strategies and dedicated sales team.</li>
-                    <li><strong>Renting:</strong> Whether you're looking for student housing, senior living communities, or vacation rentals, we have a wide selection of rental properties to choose from.</li>
+                    <li><strong>Renting:</strong> Whether you are looking for student housing, senior living communities, or vacation rentals, we have a wide selection of rental properties to choose from.</li>
                     <li><strong>Property Management:</strong> Our professional property management services ensure that your investment is well-maintained and profitable.</li>
                 </ul>
                 <h3 className="text-4xl font-bold text-center mt-10">Why Choose Real State?</h3>
