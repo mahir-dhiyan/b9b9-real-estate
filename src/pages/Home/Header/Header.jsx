@@ -25,7 +25,7 @@ const Header = () => {
 
   </swiper-container> */} 
 
-<Swiper navigation={true}  modules={[Navigation]} className="mySwiper md:h-[550px] rounded-3xl">
+<Swiper navigation={true} loop={true}  modules={[Navigation]} className="mySwiper md:h-[550px] rounded-3xl">
         <SwiperSlide  >
           <div 
           className="relative flex  justify-center items-center h-full min-h-80 bg-center bg-cover "
